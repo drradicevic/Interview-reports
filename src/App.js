@@ -1,7 +1,9 @@
+import { LoginForm } from "./components/LoginForm/LoginForm";
+
 import "./App.css";
 
 function App() {
-  return <h1>kREACTivni</h1>;
+  return <LoginForm />;
 }
 
 export default App;
