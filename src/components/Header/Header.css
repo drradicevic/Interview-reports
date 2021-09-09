@@ -1,0 +1,24 @@
+header {
+    font-family: 'Italiana', serif;
+    background-color: rgb(248, 245, 245);
+    box-shadow: rgba(214, 202, 202, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+h1, ul {
+    color: #453f3c;
+}
+
+li {
+    border: 2px solid #453f3c;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+li:hover {
+    background-color: rgb(230, 227, 227);
+    cursor: pointer;
+}

@@ -1,8 +1,10 @@
 import React, { useState, useEfect } from "react";
 
-import "./App.css";
+import Header from "./components/Header/Header";
 import { LoginForm } from "./components/LoginForm/LoginForm.jsx";
 import { getTokenAPI } from "./services/getTokenAPI";
+
+import "./App.css";
 
 function App() {
   const [token, setToken] = useState(null);
