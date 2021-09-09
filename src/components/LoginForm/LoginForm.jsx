@@ -3,14 +3,14 @@ import React, {useState} from "react";
 import "./LoginForm.css";
 
 
-export const LoginForm = () => {
+export const LoginForm = (props) => {
     
     return (
         <div className="vh-100">
     <div className="d-flex justify-content-center align-items-center backgcol h-100">
         <div className="d-flex justify-content-center align-items-center bg-white bgshadow h-75 w-75 bradius">
             <div className=" border border-dark bradius formStyle">
-                <form className="px-4 py-3">
+                <form className="px-4 py-3" onSubmit={props.submitForm}>
                     <div className="form-group">
                         <input
                         type="email"
