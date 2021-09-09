@@ -22,14 +22,39 @@ export const LoginForm = () => {
     };
 
     return (
-        <div className="login-container">
-        <div className="login">
-            <h1>Login</h1>
-             <input type="text" placeholder="username" value={username} onChange={getUserNameHandler} />
-             <input type="password" placeholder="password" value={password} onChange={passwordHandler} />
-             <button type="submit" className="login-button" /*onClick*/ >login</button> 
-             <button type="submit" className="reset-button" onClick={resetButton} >reset</button> 
+        <div className="vh-100">
+    <div className="d-flex justify-content-center align-items-center bg-secondary h-100">
+        <div className="d-flex justify-content-center align-items-center bg-white h-75 w-75 rounded">
+            <div className=" border border-dark rounded">
+                <form className="px-4 py-3">
+                    <div className="form-group">
+                        <label htmlFor="exampleDropdownFormEmail1">Email address</label>
+                        <input
+                        type="email"
+                        className="form-control fas"
+                        id="exampleDropdownFormEmail1"
+                        placeholder="&#xf0e0; email@example.com"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="exampleDropdownFormPassword1">Password</label>
+                        <input
+                        type="password"
+                        className="form-control fas"
+                        id="exampleDropdownFormPassword1"
+                        placeholder="&#xf023; Password"
+                        />
+                    </div>
+                    <button
+                    type="submit"
+                    className="btn btn-primary w-100 border-success bg-success my-4"
+                    >
+                    Sign in
+                </button>
+            </form>
         </div>
-        </div>
+    </div>
+</div>
+</div>
     )
 }

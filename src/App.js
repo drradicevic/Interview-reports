@@ -1,7 +1,10 @@
 import "./App.css";
+import {LoginForm} from "./components/LoginForm/LoginForm.jsx"
 
 function App() {
-  <h1>kREACTivni</h1>
+  return(
+  <LoginForm />
+  )
 }
 
 export default App;
