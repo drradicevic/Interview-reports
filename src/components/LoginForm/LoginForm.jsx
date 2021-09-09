@@ -23,9 +23,9 @@ export const LoginForm = () => {
 
     return (
         <div className="vh-100">
-    <div className="d-flex justify-content-center align-items-center bg-secondary h-100">
-        <div className="d-flex justify-content-center align-items-center bg-white h-75 w-75 rounded">
-            <div className=" border border-dark rounded">
+    <div className="d-flex justify-content-center align-items-center backgcol h-100">
+        <div className="d-flex justify-content-center align-items-center bg-white bgshadow h-75 w-75 bradius">
+            <div className=" border border-dark bradius">
                 <form className="px-4 py-3">
                     <div className="form-group">
                         <label htmlFor="exampleDropdownFormEmail1">Email address</label>
@@ -47,7 +47,7 @@ export const LoginForm = () => {
                     </div>
                     <button
                     type="submit"
-                    className="btn btn-primary w-100 border-success bg-success my-4"
+                    className="btn btn-primary w-100 buttoncol bradius my-4"
                     >
                     Sign in
                 </button>
