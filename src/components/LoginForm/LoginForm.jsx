@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Link } from "react-router-dom";
 
 import "./LoginForm.css";
 
@@ -6,7 +7,7 @@ import "./LoginForm.css";
 export const LoginForm = (props) => {
     
     return (
-        <div className="vh-100">
+        <div className="vh-100 fo-fa">
     <div className="d-flex justify-content-center align-items-center backgcol h-100">
         <div className="d-flex justify-content-center align-items-center bg-white bgshadow h-75 w-75 bradius">
             <div className=" border border-dark bradius formStyle">
@@ -30,8 +31,9 @@ export const LoginForm = (props) => {
                     <button
                     type="submit"
                     className="btn btn-primary w-100 buttoncol bradius my-4"
-                    >
-                    Sign in
+                    ><Link to="/homepage"> 
+                    LOG IN
+                    </Link>
                 </button>
             </form>
         </div>

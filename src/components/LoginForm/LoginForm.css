@@ -1,3 +1,7 @@
+.fo-fa {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .backgcol {
   background-color: #d4cdc3;
 }
@@ -7,12 +11,15 @@
 }
 .buttoncol {
   background-color: rgb(89, 183, 71);
-  border: 2px solid #32292f;
+  border: none;
   padding: 15px;
+  font-weight: 500;
 }
 .buttoncol:hover {
   background-color: #9a998c;
-  border: 2px solid #32292f;
+}
+.buttoncol:focus {
+  background-color: #9a998c;
 }
 .bradius {
   border-radius: 35px;
