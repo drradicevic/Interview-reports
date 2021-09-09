@@ -1,17 +1,27 @@
 .backgcol {
-    background-color: #D4CDC3;
+  background-color: #d4cdc3;
 }
 .bgshadow {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .buttoncol {
-    background-color: rgb(89, 183, 71);
-    border: 2px solid #32292F;
+  background-color: rgb(89, 183, 71);
+  border: 2px solid #32292f;
+  padding: 15px;
 }
 .buttoncol:hover {
-    background-color: #9A998C;
-    border: 2px solid #32292F;
+  background-color: #9a998c;
+  border: 2px solid #32292f;
 }
 .bradius {
-    border-radius: 15px;
+  border-radius: 35px;
+}
+.inpstyle {
+  padding: 20px;
+  margin-top: 20px;
+  width: 100%;
+}
+.formStyle {
+  width: 30%;
 }
