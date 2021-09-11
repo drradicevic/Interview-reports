@@ -17,6 +17,7 @@ function App() {
       password: "developer",
     }).then((data) => {
       setToken(data.accessToken); // JSON data parsed by `data.json()` call
+      localStorage.setItem("token", data.accessToken);
     });
   };
   console.log(token);
