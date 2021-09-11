@@ -1,11 +1,11 @@
 footer {
     font-family: 'Italiana', serif;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(212, 197, 197, 0.12) 0px 4px 6px, rgba(226, 221, 221, 0.17) 0px 12px 13px, rgba(216, 206, 206, 0.09) 0px -3px 5px;
     font-weight: 600;
     letter-spacing: 2px;
     margin-top: 1rem;
     padding: 1rem;
-    background-color: rgb(248, 245, 245);
+    background-color: #e0dad2;
+    border-top: 1px solid rgb(184, 181, 181);
     position: fixed;
     bottom: 0;
     left: 0;

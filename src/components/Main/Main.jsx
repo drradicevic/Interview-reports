@@ -3,14 +3,16 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer"
 import Card from "../Card/Card";
 
+import "./Main.css";
+
 const Main = () => {
 
     return (
-        <Fragment>
+        <div className="main">
             <Header />
             <Card />
             <Footer />
-        </Fragment>
+        </div>
     )
 };
 
