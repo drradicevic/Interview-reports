@@ -20,7 +20,7 @@ const AboutCandidate = () => {
         <img src={candidate.avatar} alt="avatar img" />
       </div>
 
-      <div className="col-8 d-flex flex-wrap align-items-start">
+      <div className="col-8 d-flex flex-wrap align-items-start border border-dark">
         <div className="col-6 about-container">
             <h6>Name:</h6>
             <p className="p-about">{candidate.name}</p>

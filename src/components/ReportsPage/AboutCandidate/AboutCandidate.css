@@ -29,3 +29,6 @@ p {
 .p-about {
     margin-bottom: 40px;
 }
+img {
+    border: 1px solid black;
+}
