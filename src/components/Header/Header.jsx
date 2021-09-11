@@ -5,7 +5,7 @@ const Header = () => {
     <header className="pt-3 text-white">
       <div className="container d-flex justify-content-between">
         <h1>
-          <span>I</span>nterviews <span>R</span>eports
+          <span>I</span>nterview <span>R</span>eports
         </h1>
         <nav>
           <ul>
