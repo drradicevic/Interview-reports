@@ -1,6 +1,6 @@
-import "./Candidate.css";
+import "./Card.css";
 
-const Candidate = ({candidateInfo, avatar}) => {
+const Card = ({candidateInfo, avatar}) => {
 
     return (
             <div className="candidate border me-2 col-3">
@@ -11,4 +11,4 @@ const Candidate = ({candidateInfo, avatar}) => {
     )
 }
 
-export default Candidate;
+export default Card;

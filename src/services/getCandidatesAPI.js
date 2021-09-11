@@ -6,5 +6,6 @@ export async function getCandidatesAPI(url, token) {
           Authorization: `Bearer ${token}` 
         }
     });
-    return response.json(); // parses JSON response into native JavaScript object
+    const result = await response.json();
+    return result; // parses JSON response into native JavaScript object
 }

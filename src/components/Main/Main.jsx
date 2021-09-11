@@ -1,9 +1,9 @@
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer"
-import Card from "../Card/Card";
 
 
 import "./Main.css";
+import Candidates from "../Candidates/Candidates";
 
 const Main = () => {
 
@@ -11,7 +11,7 @@ const Main = () => {
     return (
         <div className="main">
             <Header />
-            <Card />
+            <Candidates />
             <Footer />
         </div>
     )
