@@ -26,20 +26,20 @@ const Reports = () => {
             <td>@medo</td>
           </tr>
           <tr>
-            <td> <i class="fab fa-facebook-f"> Facebook</i>
+            <td> <i className="fab fa-facebook-f"> Facebook</i>
             </td>
             <td>Thornton</td>
             <td>@fat</td>
           </tr>
           <tr>
-            <td><i class="fab fa-instagram"> Instagram</i>
+            <td><i className="fab fa-instagram"> Instagram</i>
             </td>
             <td>the Bird</td>
             <td>@twitter</td>
           </tr>
           <tr>
             <td>
-              <i class="fab fa-linkedin-in"> Linkedin</i>
+              <i className="fab fa-linkedin-in"> Linkedin</i>
             </td>
             <td>Thornton</td>
             <td>@fat</td>

@@ -1,18 +1,31 @@
-import { Fragment } from "react/cjs/react.production.min";
+import { Fragment, useState, useEffect} from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import AboutCandidate from "./AboutCandidate/AboutCandidate";
-import Reports from "./ReportsPage/ReportsPage";
+import Reports from "./Reports/Reports"
+import { getSingleCandidateInfo } from "../../services/getSingleCandidateInfo"; 
 
-const ReportsPage = () => {
+const ReportsPage = (props) => {
+  
+  const [candidateInfo, setCandidateInfo] = useState(null);
+  
+  
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    getSingleCandidateInfo(`http://localhost:3333/api/candidates/${props.match.params.id}`, token)
+    .then(info => setCandidateInfo(info));
+  }, [])
+  
+  
   return (
     <Fragment>
-      <Header />
-      <AboutCandidate/>
-      <Reports />
-      <Footer />
+    <Header />
+    {candidateInfo && <AboutCandidate candidateData={candidateInfo}/>}
+    
+    <Reports />
+    <Footer />
     </Fragment>
-  );
-};
-
-export default ReportsPage;
+    );
+  };
+  
+  export default ReportsPage;
