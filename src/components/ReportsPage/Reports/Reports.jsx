@@ -12,7 +12,7 @@ const Reports = ({ reports }) => {
             <th scope="col" rowSpan="2">
               Interview Date
             </th>
-            <th scope="col" rowSpan="2">
+            <th scope="col" colSpan="3">
               Status
             </th>
           </tr>
@@ -24,6 +24,7 @@ const Reports = ({ reports }) => {
                 <td>{report.companyName}</td>
                 <td>{report.interviewDate}</td>
                 <td>{report.status}</td>
+                <td><span><i className="far fa-eye" /></span></td>
               </tr>
             );
           })}
