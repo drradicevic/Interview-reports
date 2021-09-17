@@ -44,3 +44,17 @@
   margin-top: 20px;
   width: 100%;
 }
+
+.error-msg {
+  color: rgba(255, 0, 0, 0.685);
+  background-color: none !important;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.placeholder-font {
+  font-size: 15px;
+  font-weight: 500;
+
+}

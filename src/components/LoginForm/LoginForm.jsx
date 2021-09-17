@@ -1,22 +1,47 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
+import useInput from "../../hooks/useInput";
+
 import { getTokenAPI } from "../../services/getTokenAPI";
 
 import "./LoginForm.css";
 
 
 const LoginForm = ({onLogin}) => {
+    const {
+        value: emailValue,
+        isValid: isEmailValid,
+        isTouched: emailIsTouched,
+        valueChangeHandler: emailChangeHandler,
+        reset: resetEmail
+    } = useInput(value => value.includes("@"));
+
+    const {
+        value: passValue,
+        isValid: isPassValid,
+        isTouched: passIsTouched,
+        valueChangeHandler: passChangeHandler,
+        reset: resetPass
+    } = useInput(value => value.trim() !== "" && value.length > 6);
+
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        getTokenAPI("http://localhost:3333/login", {
-          email: "dev@dev.com",
-          password: "developer",
-        }).then((data) => {
-            localStorage.setItem("token", data.accessToken);
-            onLogin(true);
-        });
-      };
+        if (isPassValid && isEmailValid) {
+                getTokenAPI("http://localhost:3333/login", {
+                    email: emailValue,
+                    password: passValue,
+                }).then((data) => {
+                    localStorage.setItem("token", data.accessToken); // JSON data parsed by `data.json()` call
+                    onLogin(true);
+                }).catch(err => alert(err.message)); 
+        } else {
+            alert("All fields are required!")
+        }
+
+        resetEmail();
+        resetPass();
+    };
 
     return (
         <div className="vh-100 font-fam">
@@ -27,23 +52,27 @@ const LoginForm = ({onLogin}) => {
                             <div className="form-group">
                                 <input
                                     type="email"
-                                    className="form-control fas form-input-style border-rad"
-                                    id="exampleDropdownFormEmail1"
-                                    placeholder="&#xf0e0; email@example.com"
+                                    className="form-control fas form-input-style border-rad placeholder-font"
+                                    placeholder="&#xf0e0;  enter email"
+                                    value={emailValue}
+                                    onChange={emailChangeHandler}
                                 />
+                                {(!isEmailValid && emailIsTouched) && (<p className="error-msg mb-0">Invalid Email</p>)}
                             </div>
                             <div className="form-group">
                                 <input
                                     type="password"
-                                    className="form-control fas form-input-style border-rad"
-                                    id="exampleDropdownFormPassword1"
-                                    placeholder="&#xf023; Password"
+                                    className="form-control fas form-input-style border-rad placeholder-font"
+                                    placeholder="&#xf13e;  enter password"
+                                    value={passValue}
+                                    onChange={passChangeHandler}
                                 />
+                                {(!isPassValid && passIsTouched) && (<p className="error-msg mb-0">Invalid Password!</p>)}
                             </div>
                             <button
                                 type="submit"
-                                className="btn btn-primary w-100 button-col border-rad my-4"
-                            > LOG IN
+                                className="btn btn-primary w-100 button-col border-rad my-4">
+                                LOG IN
                             </button>
                         </form>
                     </div>
