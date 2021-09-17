@@ -1,17 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { getTokenAPI } from "../../services/getTokenAPI";
 
 import "./LoginForm.css";
 
 
-export const LoginForm = (props) => {
+const LoginForm = ({onLogin}) => {
+
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+        getTokenAPI("http://localhost:3333/login", {
+          email: "dev@dev.com",
+          password: "developer",
+        }).then((data) => {
+            localStorage.setItem("token", data.accessToken);
+            onLogin(true);
+        });
+      };
 
     return (
         <div className="vh-100 font-fam">
             <div className="d-flex justify-content-center align-items-center bg-color h-100">
                 <div className="d-flex justify-content-center align-items-center bg-img h-75 border-rad">
                     <div className="mini-cont border-rad">
-                        <form className="px-4 py-3" onSubmit={props.submitForm}>
+                        <form className="px-4 py-3" onSubmit={onSubmitHandler}>
                             <div className="form-group">
                                 <input
                                     type="email"
@@ -31,9 +43,7 @@ export const LoginForm = (props) => {
                             <button
                                 type="submit"
                                 className="btn btn-primary w-100 button-col border-rad my-4"
-                            ><Link to="/homepage">
-                                    LOG IN
-                                </Link>
+                            > LOG IN
                             </button>
                         </form>
                     </div>
@@ -42,3 +52,5 @@ export const LoginForm = (props) => {
         </div>
     )
 }
+
+export default LoginForm;
