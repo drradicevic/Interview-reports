@@ -1,18 +1,19 @@
 import "./Reports.css";
 
-const Reports = ({ reports }) => {
+const Reports = ({ reports, modalHandler}) => {
+
   return (
     <div className="my-5 mx-5">
       <table className="table">
         <thead>
           <tr>
-            <th scope="col" rowSpan="2">
+            <th>
               Company
             </th>
-            <th scope="col" rowSpan="2">
+            <th>
               Interview Date
             </th>
-            <th scope="col" colSpan="3">
+            <th colSpan="2">
               Status
             </th>
           </tr>
@@ -21,12 +22,12 @@ const Reports = ({ reports }) => {
           {reports.map((report, index) => {
             return (
               <tr key={index}>
-                <td>{report.companyName}</td>
-                <td>{report.interviewDate}</td>
-                <td>{report.status}</td>
-                <td><span><i className="far fa-eye" /></span></td>
-              </tr>
-            );
+              <td>{report.companyName}</td>
+              <td>{report.interviewDate}</td>
+              <td>{report.status}</td>
+              <td><span onClick={() => {modalHandler(report.id)}}><i className="far fa-eye"></i></span></td>
+            </tr>
+            )
           })}
         </tbody>
       </table>
