@@ -1,0 +1,16 @@
+/**************** TABLE STYLE *******************/
+
+td {
+    font-family: "Montserrat", sans-serif;
+}
+  
+th {
+    font-family: "Italiana", serif;
+    border: 1px solid #9a998c;
+    color: rgba(177, 149, 116, 0.774);
+}
+  
+thead,
+tbody {
+    text-align: center;
+}

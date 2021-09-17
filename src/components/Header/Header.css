@@ -3,21 +3,21 @@ header {
     margin-bottom: 150px;
 }
 h1 {
-    font-weight: 600;
-}
-h1, ul {
     color: #453f3c;
-}
-li {
-    border: 1px solid #453f3c;
-    border-radius: 30px;
-    font-weight: 600;
-}
-li:hover {
-    background-color: rgb(230, 227, 227);
-    cursor: pointer;
+    letter-spacing: 2px;
 }
 
 h1 span {
     font-size: 1.3em;
+}
+
+.candidates-button {
+    color: #453f3c;
+    border: 1px solid #453f3c;
+    border-radius: 30px;
+    font-weight: 600;
+}
+.candidates-button:hover {
+    background-color: rgb(230, 227, 227);
+    cursor: pointer;
 }

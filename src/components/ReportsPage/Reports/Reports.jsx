@@ -2,17 +2,16 @@ import "./Reports.css";
 
 const Reports = ({ reports }) => {
   return (
-    <div className="my-5 mx-5">
-      <table className="table">
-        <thead>
+      <table className="table table-striped table-hover my-5">
+        <thead className="fs-4">
           <tr>
-            <th scope="col" rowSpan="2">
+            <th>
               Company
             </th>
-            <th scope="col" rowSpan="2">
+            <th >
               Interview Date
             </th>
-            <th scope="col" colSpan="3">
+            <th colSpan="2">
               Status
             </th>
           </tr>
@@ -30,7 +29,6 @@ const Reports = ({ reports }) => {
           })}
         </tbody>
       </table>
-    </div>
   );
 };
 

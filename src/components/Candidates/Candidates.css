@@ -1,5 +1,11 @@
-h2 {
-  font-family: 'Italiana', serif;
+.candidates-title {
+  font-family: "Italiana", serif;
   font-weight: 600;
   letter-spacing: 1px;
+}
+
+.input-search {
+  border: 1px solid #453f3c;
+  border-radius: 30px;
+  outline: none;
 }
