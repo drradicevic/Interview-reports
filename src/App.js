@@ -1,35 +1,34 @@
-import React, { useState, useEfect } from "react";
+import React, { Fragment, useState} from "react";
 import { Route, Switch } from "react-router";
-import { LoginForm } from "./components/LoginForm/LoginForm.jsx";
-import { getTokenAPI } from "./services/getTokenAPI";
+
+import Header from "./components/Header/Header.jsx";
+import Footer from "./components/Footer/Footer.jsx";
+import LoginForm from "./components/LoginForm/LoginForm.jsx";
 import Main from "./components/Main/Main";
 import ReportsPage from "./components/ReportsPage/ReportsPage.jsx";
+import Candidates from "./components/Candidates/Candidates.jsx";
 
 import "./App.css";
 
 
 function App() {
-  const [token, setToken] = useState(null);
-
-  const onSubmitHandler = (e) => {
-    e.preventDefault();
-    getTokenAPI("http://localhost:3333/login", {
-      email: "dev@dev.com",
-      password: "developer",
-    }).then((data) => {
-      setToken(data.accessToken); // JSON data parsed by `data.json()` call
-      localStorage.setItem("token", data.accessToken);
-    });
-  };
-  console.log(token);
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
+  
   return (
-    !token ? 
-      <LoginForm submitForm={onSubmitHandler} /> 
+    <Fragment>
+    {!isLoggedIn ? 
+      <LoginForm  onLogin={setIsLoggedIn}/> 
       :
+      <Main>
+        <Header />
       <Switch>
-      <Route path="/homepage" component={Main} />
-      <Route exact path="/reports/:id" component={ReportsPage} />
+        <Route exact path="/reports/:id" component={ReportsPage} />
+        <Route exact path="/" component={Candidates} />
       </Switch>
+        <Footer />
+      </Main>
+}
+      </Fragment>
   )
 }
 

@@ -14,3 +14,7 @@ thead,
 tbody {
     text-align: center;
 }
+
+.eye-click {
+    cursor: pointer;
+}

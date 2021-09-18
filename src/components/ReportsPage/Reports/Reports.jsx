@@ -1,6 +1,7 @@
 import "./Reports.css";
 
-const Reports = ({ reports }) => {
+const Reports = ({ reports, modalHandler}) => {
+
   return (
       <table className="table table-striped table-hover my-5">
         <thead className="fs-4">
@@ -8,7 +9,7 @@ const Reports = ({ reports }) => {
             <th>
               Company
             </th>
-            <th >
+            <th>
               Interview Date
             </th>
             <th colSpan="2">
@@ -20,12 +21,12 @@ const Reports = ({ reports }) => {
           {reports.map((report, index) => {
             return (
               <tr key={index}>
-                <td>{report.companyName}</td>
-                <td>{report.interviewDate}</td>
-                <td>{report.status}</td>
-                <td><span><i className="far fa-eye" /></span></td>
-              </tr>
-            );
+              <td>{report.companyName}</td>
+              <td>{report.interviewDate}</td>
+              <td>{report.status}</td>
+              <td><span onClick={() => {modalHandler(report.id)}}><i className="far fa-eye"></i></span></td>
+            </tr>
+            )
           })}
         </tbody>
       </table>

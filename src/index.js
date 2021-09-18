@@ -6,6 +6,9 @@ import App from "./App";
 
 import Main from "./components/Main/Main"
 
+//bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>

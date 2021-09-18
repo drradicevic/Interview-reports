@@ -1,0 +1,26 @@
+.modal-container {
+    width: 50%;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    border: 1px solid green;
+    background: whitesmoke;
+    z-index: 10;
+}
+
+.modal-container-body span {
+    display: block;
+    color: rgba(112, 112, 112, 0.712);
+}
+
+.modal-container-body p {
+    background-color: rgba(212, 204, 210, 0.63);
+}
+
+.fa-times-circle {
+    cursor: pointer;
+}
+
+.fa-times-circle:hover {
+    color: rgba(70, 55, 66, 0.63);
+}

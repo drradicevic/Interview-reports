@@ -1,18 +1,13 @@
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer"
-
 
 import "./Main.css";
-import Candidates from "../Candidates/Candidates";
 
-const Main = () => {
+
+const Main = (props) => {
 
 
     return (
-        <div className="main">
-            <Header />
-            <Candidates />
-            <Footer />
+        <div className="main container-fluid">
+            {props.children}
         </div>
     )
 };
