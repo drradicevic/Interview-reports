@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useTokenValidator from "../../hooks/useTokenValidator";
 
 import { getCandidatesAPI } from "../../services/getCandidatesAPI";
 import Card from "./Card/Card";
@@ -13,10 +14,13 @@ const Candidates = () => {
   const [filteredCandidates, setfilteredCandidates] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
+  const validate = useTokenValidator();
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     getCandidatesAPI("http://localhost:3333/api/candidates", token).then(
       (candidates) => {
+        validate(candidates)
         setCandidates(candidates);
         setfilteredCandidates(candidates);
       }
