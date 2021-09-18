@@ -24,7 +24,7 @@ const ReportsPage = (props) => {
   }, [])
 
   useEffect(() => {
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem("token");
     getCandidateReportsAPI(`http://localhost:3333/api/reports`, token)
       .then(reports => setReports(reports.filter(el => el.candidateId === parseInt(singleCandidateId))))
   }, [])

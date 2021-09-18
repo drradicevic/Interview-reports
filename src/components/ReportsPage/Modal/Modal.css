@@ -1,20 +1,28 @@
 .modal-container {
     width: 50%;
-    position: absolute;
+    position: fixed;
     top: 20%;
     left: 25%;
-    border: 1px solid green;
+    border: 1px solid grey;
     background: whitesmoke;
     z-index: 10;
 }
 
-.modal-container-body span {
+.modal-title {
     display: block;
     color: rgba(112, 112, 112, 0.712);
+    background-color: whitesmoke;
+    
 }
 
 .modal-container-body p {
-    background-color: rgba(212, 204, 210, 0.63);
+    background-color: rgba(177, 149, 116, 0.774);
+    color: white;
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-top: 7px;
+    
 }
 
 .fa-times-circle {

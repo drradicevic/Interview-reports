@@ -3,10 +3,8 @@ import "./Backdrop.css"
 const Backdrop = (props) => {
 
     return (
-        props.showModal ? 
+        props.showModal && 
         <div className="backdrop" onClick={props.cancelModal}></div>
-        :
-        null
     )
 }
 

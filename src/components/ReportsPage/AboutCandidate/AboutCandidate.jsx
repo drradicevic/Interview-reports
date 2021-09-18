@@ -28,7 +28,7 @@ const AboutCandidate = (props) => {
           <div className="col-12 col-xl-6 about-container pt-3 m-xl-0">
             <h6 className="about-info">Date of birth:</h6>
             <p className="about-data">
-              {props.candidateData.birthday.slice(0, 15)}
+              {new Date(props.candidateData.birthday).toLocaleString("en-GB", {year:"numeric", month:"2-digit", day:"2-digit"})}
             </p>
           </div>
           <div className="col-12 col-xl-6 about-container mb-4 pt-3 m-xl-0">

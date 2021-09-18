@@ -1,6 +1,6 @@
 header {
     font-family: 'Italiana', serif;
-    margin-bottom: 150px;
+    margin-bottom: 120px;
 }
 h1 {
     color: #453f3c;
@@ -20,4 +20,7 @@ h1 span {
 .candidates-button:hover {
     background-color: rgb(230, 227, 227);
     cursor: pointer;
+}
+.button-wrapper:hover {
+    cursor: auto;
 }

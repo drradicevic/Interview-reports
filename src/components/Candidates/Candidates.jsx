@@ -26,7 +26,7 @@ const Candidates = () => {
   const onTypingHandler = (e) => {
     setInputValue(e.target.value);
     const filtered = candidates.filter((candidate) =>
-      candidate.name.toLowerCase().includes(e.target.value.toLowerCase())
+      candidate?.name?.toLowerCase().includes(e?.target?.value?.toLowerCase())
     );
     setfilteredCandidates(filtered);
   };
@@ -40,7 +40,7 @@ const Candidates = () => {
         <div className="col-12 col-md-6 text-md-end">
           <input
             value={inputValue}
-            placeholder="search..."
+            placeholder="Search..."
             type="text"
             onChange={onTypingHandler}
             className="w-50 w-sm-25 w-md-25 ps-3 py-2 input-search"
