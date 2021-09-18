@@ -3,9 +3,8 @@ import "./Reports.css";
 const Reports = ({ reports, modalHandler}) => {
 
   return (
-    <div className="my-5 mx-5">
-      <table className="table">
-        <thead>
+      <table className="table table-striped table-hover my-5">
+        <thead className="fs-4">
           <tr>
             <th>
               Company
@@ -31,7 +30,6 @@ const Reports = ({ reports, modalHandler}) => {
           })}
         </tbody>
       </table>
-    </div>
   );
 };
 
