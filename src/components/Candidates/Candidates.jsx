@@ -9,7 +9,7 @@ import "./Candidates.css";
 const avatar =
   "https://static.vecteezy.com/system/resources/previews/002/275/847/non_2x/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg";
 
-const Candidates = () => {
+const Candidates = ({setIsLoggedIn}) => {
   const [candidates, setCandidates] = useState([]);
   const [filteredCandidates, setfilteredCandidates] = useState([]);
   const [inputValue, setInputValue] = useState("");
@@ -20,7 +20,7 @@ const Candidates = () => {
     const token = localStorage.getItem("token");
     getCandidatesAPI("http://localhost:3333/api/candidates", token).then(
       (candidates) => {
-        validate(candidates)
+        validate(candidates, setIsLoggedIn)
         setCandidates(candidates);
         setfilteredCandidates(candidates);
       }

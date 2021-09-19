@@ -23,7 +23,9 @@ function App() {
         <Header />
       <Switch>
         <Route exact path="/reports/:id" component={ReportsPage} />
-        <Route exact path="/" component={Candidates} />
+        <Route exact path="/">
+          <Candidates setIsLoggedIn={setIsLoggedIn}/>
+        </Route>
       </Switch>
         <Footer />
       </Main>
