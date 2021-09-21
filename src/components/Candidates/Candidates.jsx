@@ -3,7 +3,7 @@ import useTokenValidator from "../../hooks/useTokenValidator";
 
 import { getCandidatesAPI } from "../../services/services";
 import Card from "./Card/Card";
-import NotFoundCandidate from "./NotFoundCandidate"
+import NotFoundCandidate from "./NotFoundCandidate";
 
 import avatar from "../../assets/avatar.jpg";
 

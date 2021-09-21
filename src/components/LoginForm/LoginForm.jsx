@@ -57,7 +57,7 @@ const LoginForm = ({ onLogin }) => {
     <div className="vh-100 font-fam">
       <div className="d-flex justify-content-center align-items-center bg-color h-100">
         <div className="d-flex justify-content-center align-items-center flex-column bg-img form-wrapper">
-          <img className="logo" src={logo} />
+          <img className="logo" src={logo} alt="logo" />
           <div className="mini-container border-rad">
             <form className="px-4 py-3" onSubmit={onSubmitHandler}>
               <div className="form-group">

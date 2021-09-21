@@ -7,7 +7,7 @@ import logo from "../../assets/logo.png"
 const Spinner = () => {
 
     return (
-        <div class="spinner-container"><img src={logo} alt="" /></div>
+        <div className="spinner-container"><img src={logo} alt="" /></div>
     )
 }
 

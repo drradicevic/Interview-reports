@@ -21,12 +21,14 @@ function App() {
       :
       <Main>
         <Header />
-      <Switch>
-        <Route exact path="/reports/:id" component={ReportsPage} />
-        <Route exact path="/">
-          <Candidates setIsLoggedIn={setIsLoggedIn}/>
-        </Route>
-      </Switch>
+        <Switch>
+          <Route exact path="/">
+            <Candidates setIsLoggedIn={setIsLoggedIn}/>
+          </Route>
+          <Route exact path="/reports/:id">
+            <ReportsPage />
+          </Route>
+        </Switch>
         <Footer />
       </Main>
 }

@@ -1,4 +1,6 @@
 import { useState, useEffect} from "react";
+import { useParams } from "react-router";
+import useTokenValidator from "../../hooks/useTokenValidator";
 
 import AboutCandidate from "./AboutCandidate/AboutCandidate";
 import Reports from "./Reports/Reports";
@@ -10,23 +12,30 @@ import Spinner  from "../Spinner/Spinner";
 import { getSingleCandidateInfo } from "../../services/services"; 
 import { getCandidateReportsAPI } from "../../services/services";
 
-const ReportsPage = (props) => {
+const ReportsPage = ({setIsLoggedIn}) => {
   const [candidateInfo, setCandidateInfo] = useState(null);
   const [reports, setReports] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [modalReport, setModalReport] = useState(null)
- 
-  const singleCandidateId = props.match.params.id;
+  const [modalReport, setModalReport] = useState(null);
+
+  const validate = useTokenValidator();
+  const singleCandidateId = useParams();
   const token = localStorage.getItem("token");
   
   useEffect(() => {
-    getSingleCandidateInfo(singleCandidateId, token)
-    .then(info => setCandidateInfo(info));
+    getSingleCandidateInfo(singleCandidateId.id, token)
+    .then(info => {
+      validate(info, setIsLoggedIn)
+      setCandidateInfo(info)
+    });
   }, [])
 
   useEffect(() => {
     getCandidateReportsAPI(token)
-      .then(reports => setReports(reports.filter(el => el.candidateId === parseInt(singleCandidateId))))
+      .then(reports => {
+        validate(reports, setIsLoggedIn)
+        setReports(reports.filter(el => el.candidateId === parseInt(singleCandidateId.id)))
+      })
   }, [])
 
   const modalHandler = (singleReport) => {
