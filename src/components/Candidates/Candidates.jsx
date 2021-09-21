@@ -30,7 +30,7 @@ const Candidates = ({setIsLoggedIn}) => {
   const onTypingHandler = (e) => {
     setInputValue(e.target.value);
     const filtered = candidates.filter((candidate) => 
-      candidate?.name?.toLowerCase().includes(e?.target?.value?.toLowerCase())
+      candidate?.name?.toLowerCase().includes(e?.target?.value?.toLowerCase().trim())
       );
     setfilteredCandidates(filtered);
   };
