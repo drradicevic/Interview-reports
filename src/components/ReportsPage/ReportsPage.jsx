@@ -28,7 +28,7 @@ const ReportsPage = ({setIsLoggedIn}) => {
       validate(info, setIsLoggedIn)
       setCandidateInfo(info)
     });
-  }, [])
+  }, [setIsLoggedIn, validate])
 
   useEffect(() => {
     getCandidateReportsAPI(token)
@@ -36,7 +36,7 @@ const ReportsPage = ({setIsLoggedIn}) => {
         validate(reports, setIsLoggedIn)
         setReports(reports.filter(el => el.candidateId === parseInt(singleCandidateId.id)))
       })
-  }, [])
+  }, [setIsLoggedIn, validate])
 
   const modalHandler = (singleReport) => {
     setModalReport(singleReport);
