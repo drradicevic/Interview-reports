@@ -7,6 +7,7 @@ import LoginForm from "./components/LoginForm/LoginForm.jsx";
 import Main from "./components/Main/Main";
 import ReportsPage from "./components/ReportsPage/ReportsPage.jsx";
 import Candidates from "./components/Candidates/Candidates.jsx";
+import ReportsAdministration from "./components/ReportsAdministration/ReportsAdministration.jsx";
 
 import "./App.css";
 
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/reports/:id">
             <ReportsPage />
           </Route>
+          <Route exact path="/reports-list" component={ReportsAdministration} />
         </Switch>
         <Footer />
       </Main>
