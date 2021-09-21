@@ -22,7 +22,7 @@ const Reports = ({ reports, modalHandler }) => {
                 <td>
                   <span
                     onClick={() => {
-                      modalHandler(report.id);
+                      modalHandler(report);
                     }}
                   >
                     <i className="far fa-eye"></i>

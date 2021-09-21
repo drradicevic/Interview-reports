@@ -11,12 +11,17 @@
     margin-top: 10px;
     background-color: white;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    
     margin-bottom: 50px;
     padding: 0px 15px;
     font-family: 'Montserrat', sans-serif; 
     text-decoration: none;
-    
+}
+
+.card-candidate:hover {
+    background-color: rgba(224, 218, 210, 0.555);
+}
+.card-img:hover {
+    opacity: 0.9;
 }
 
 .card-username, .card-email {
