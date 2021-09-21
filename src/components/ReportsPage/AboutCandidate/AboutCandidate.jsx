@@ -1,11 +1,13 @@
 import "./AboutCandidate.css";
 
+import avatar from "../../../assets/avatar.jpg"
+
 const AboutCandidate = (props) => {
   return (
     <div className="d-flex flex-wrap flex-xl-nowrap justify-content-center justify-content-xl-between mt-5 mx-5 w-75 mx-auto">
       <div className="col-11 col-sm-8 col-md-8 col-xl-4 col-xxl-3 about-avatar-container mb-5 mb-xl-0 d-flex flex-column justify-content-between">
         <img
-          src="https://static.vecteezy.com/system/resources/previews/002/275/847/non_2x/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"
+          src={avatar}
           alt="avatar img"
           className="about-avatar mx-auto"
         />

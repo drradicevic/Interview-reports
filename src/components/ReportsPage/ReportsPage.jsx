@@ -4,6 +4,7 @@ import AboutCandidate from "./AboutCandidate/AboutCandidate";
 import Reports from "./Reports/Reports";
 import Modal from "./Modal/Modal";
 import Backdrop from "./Modal/Backdrop";
+import Spinner  from "../Spinner/Spinner";
 
 
 import { getSingleCandidateInfo } from "../../services/services"; 
@@ -49,7 +50,7 @@ const ReportsPage = (props) => {
     <Modal showModal={showModal} cancelModal={cancelHandler} modalReport={modalReport} />
     </div>
     :
-    <p>Loading...</p>
+    <Spinner />
     );
   };
   

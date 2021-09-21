@@ -5,10 +5,9 @@ import { getCandidatesAPI } from "../../services/services";
 import Card from "./Card/Card";
 import NotFoundCandidate from "./NotFoundCandidate"
 
-import "./Candidates.css";
+import avatar from "../../assets/avatar.jpg";
 
-const avatar =
-  "https://static.vecteezy.com/system/resources/previews/002/275/847/non_2x/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg";
+import "./Candidates.css";
 
 const Candidates = ({setIsLoggedIn}) => {
   const [candidates, setCandidates] = useState([]);
