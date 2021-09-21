@@ -2,7 +2,8 @@
   font-family: 'Montserrat', sans-serif;
 }
 .bg-img {
-  background-image: url(https://images.unsplash.com/photo-1547104442-044448b73426?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80);
+  background-image: url(../../assets/backg.jpg);
+  background-size: cover;
   box-shadow: rgba(0, 0, 0, 0.514) 0px 3px 8px;
   border: 1px solid gray;
   width: 53%;
@@ -117,11 +118,18 @@
 
 @media screen and (min-width: 1200px) {
   .form-wrapper {
-    width: 50%;
+    width: 60%;
     
   }
   .mini-container {
     width: 45%;
-    height: 50%;
+    height: 40%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .form-wrapper {
+    width: 50%;
+    
   }
 }

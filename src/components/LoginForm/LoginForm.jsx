@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router";
+import React from "react";
+
 import useInput from "../../hooks/useInput.js";
 
 import logo from "../../assets/logo.png";
 
-import { getTokenAPI } from "../../services/getTokenAPI.js";
+import { getTokenAPI } from "../../services/services";
 
 import "./LoginForm.css";
 
@@ -25,12 +25,10 @@ const LoginForm = ({ onLogin }) => {
     reset: resetPass,
   } = useInput((value) => value.trim() !== "" && value.length > 6);
 
-  const history = useHistory();
-
   const onSubmitHandler = (e) => {
     e.preventDefault();
     if (isPassValid && isEmailValid) {
-      getTokenAPI("http://localhost:3333/login", {
+      getTokenAPI({
         email: emailValue,
         password: passValue,
       })
@@ -38,7 +36,7 @@ const LoginForm = ({ onLogin }) => {
           localStorage.setItem("token", data.accessToken); // JSON data parsed by `data.json()` call
           onLogin(true);
         })
-        .catch((err) => alert(err.message));
+        .catch((err) => alert("Please provide correct email or password"));
     } else {
       alert("All fields are required!");
     }
