@@ -7,8 +7,8 @@ import Backdrop from "./Modal/Backdrop";
 import Spinner  from "../Spinner/Spinner";
 
 
-import { getSingleCandidateInfo } from "../../services/getSingleCandidateInfo"; 
-import { getCandidateReportsAPI } from "../../services/getCandidateReportsAPI";
+import { getSingleCandidateInfo } from "../../services/services"; 
+import { getCandidateReportsAPI } from "../../services/services";
 
 const ReportsPage = (props) => {
   const [candidateInfo, setCandidateInfo] = useState(null);
@@ -17,22 +17,20 @@ const ReportsPage = (props) => {
   const [modalReport, setModalReport] = useState(null)
  
   const singleCandidateId = props.match.params.id;
+  const token = localStorage.getItem("token");
   
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    getSingleCandidateInfo(`http://localhost:3333/api/candidates/${singleCandidateId}`, token)
+    getSingleCandidateInfo(singleCandidateId, token)
     .then(info => setCandidateInfo(info));
   }, [])
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    getCandidateReportsAPI(`http://localhost:3333/api/reports`, token)
+    getCandidateReportsAPI(token)
       .then(reports => setReports(reports.filter(el => el.candidateId === parseInt(singleCandidateId))))
   }, [])
 
-  const modalHandler = (id) => {
-    const company = reports.filter((report) => report.id === id)
-    setModalReport(company);
+  const modalHandler = (singleReport) => {
+    setModalReport(singleReport);
     setShowModal(true);
     document.body.style.overflow = 'hidden';
   }
@@ -45,7 +43,7 @@ const ReportsPage = (props) => {
  
   return (
     (reports && candidateInfo) ?
-    <div className="main">
+    <div>
     <AboutCandidate candidateData={candidateInfo}/>
     <Reports reports={reports} modalHandler={modalHandler} />
     <Backdrop showModal={showModal} cancelModal={cancelHandler} />

@@ -1,21 +1,26 @@
 import { useEffect, useState } from "react";
+import useTokenValidator from "../../hooks/useTokenValidator";
 
-import { getCandidatesAPI } from "../../services/getCandidatesAPI";
+import { getCandidatesAPI } from "../../services/services";
 import Card from "./Card/Card";
+import NotFoundCandidate from "./NotFoundCandidate"
 
 import avatar from "../../assets/avatar.jpg";
 
 import "./Candidates.css";
 
-const Candidates = () => {
+const Candidates = ({setIsLoggedIn}) => {
   const [candidates, setCandidates] = useState([]);
   const [filteredCandidates, setfilteredCandidates] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
+  const validate = useTokenValidator();
+  const token = localStorage.getItem("token");
+
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    getCandidatesAPI("http://localhost:3333/api/candidates", token).then(
+    getCandidatesAPI(token).then(
       (candidates) => {
+        validate(candidates, setIsLoggedIn)
         setCandidates(candidates);
         setfilteredCandidates(candidates);
       }
@@ -24,9 +29,9 @@ const Candidates = () => {
 
   const onTypingHandler = (e) => {
     setInputValue(e.target.value);
-    const filtered = candidates.filter((candidate) =>
+    const filtered = candidates.filter((candidate) => 
       candidate?.name?.toLowerCase().includes(e?.target?.value?.toLowerCase())
-    );
+      );
     setfilteredCandidates(filtered);
   };
 
@@ -47,7 +52,9 @@ const Candidates = () => {
         </div>
       </div>
       <div className="d-flex flex-wrap justify-content-center justify-content-md-between mt-5">
-        {filteredCandidates.map((candidate, index) => (
+        {filteredCandidates.length === 0 ? 
+          <NotFoundCandidate /> 
+          : filteredCandidates.map((candidate, index) => (
           <Card candidateInfo={candidate} key={index} avatar={avatar} />
         ))}
       </div>
