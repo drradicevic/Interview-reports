@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getCandidateReportsAPI } from "../../services/services";
 import useTokenValidator from "../../hooks/useTokenValidator";
+import { Link } from "react-router-dom";
 
 import SingleReport from "./SingleReport/SingleReport";
 import Modal from "../Modal/Modal";
@@ -45,6 +46,9 @@ const ReportsAdministration = ({setIsLoggedIn}) => {
         ))}
         <Backdrop showModal={showModal} cancelModal={cancelHandler} />
         <Modal showModal={showModal} cancelModal={cancelHandler} modalReport={modalReport} />
+        <Link to="/wizard">
+          <button className="wizard-button"><i className="fas fa-folder-plus fs-2"></i></button>
+        </Link>
       </div>
     )
   );
