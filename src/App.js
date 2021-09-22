@@ -29,7 +29,9 @@ function App() {
           <Route exact path="/reports/:id">
             <ReportsPage setIsLoggedIn={setIsLoggedIn} />
           </Route>
-          <Route exact path="/reports-list" component={ReportsAdministration} />
+          <Route exact path="/reports-list">
+          <ReportsAdministration setIsLoggedIn={setIsLoggedIn} />
+          </Route>
         </Switch>
         <Footer />
       </Main>

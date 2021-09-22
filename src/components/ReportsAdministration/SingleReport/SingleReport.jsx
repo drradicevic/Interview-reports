@@ -1,7 +1,18 @@
 import { Fragment } from "react";
+
+import { deleteReportAPI } from "../../../services/services";
+
 import "./SingleReport.css";
 
-const SingleReport = ({ report, modalHandler}) => {
+const SingleReport = ({ report, modalHandler, setDeleteReport}) => {
+    
+    const token = localStorage.getItem("token");
+
+    const deleteReportHandler = (report) => {
+        deleteReportAPI(token, report.id);
+        setDeleteReport(report);
+    }
+
   return (
     <Fragment>
       <div className="report-item col-3 ps-3 border-end border-dark">
@@ -29,7 +40,7 @@ const SingleReport = ({ report, modalHandler}) => {
       </div>
       <div className="report-item col-1 text-center">
         <i className="far fa-eye py-4 pe-4 fs-3 click-icon" onClick={() => modalHandler(report)}></i>
-        <i className="fas fa-times fs-3 click-icon"></i>
+        <i className="fas fa-times fs-3 click-icon" onClick={() => deleteReportHandler(report) }></i>
       </div>
       </Fragment>
   );
