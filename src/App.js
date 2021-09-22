@@ -8,6 +8,7 @@ import Main from "./components/Main/Main";
 import ReportsPage from "./components/ReportsPage/ReportsPage.jsx";
 import Candidates from "./components/Candidates/Candidates.jsx";
 import ReportsAdministration from "./components/ReportsAdministration/ReportsAdministration.jsx";
+import Wizard from "./components/ReportsAdministration/SingleReport/Wizard/Wizard.jsx";
 
 import "./App.css";
 
@@ -32,6 +33,7 @@ function App() {
           <Route exact path="/reports-list">
           <ReportsAdministration setIsLoggedIn={setIsLoggedIn} />
           </Route>
+          <Route path="/wizard" component={Wizard} />
         </Switch>
         <Footer />
       </Main>
