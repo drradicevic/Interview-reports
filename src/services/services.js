@@ -33,7 +33,7 @@ export async function getCandidatesAPI(token, validate, setIsLoggedIn) {
     result = await validate(result, setIsLoggedIn);
   }
   
-  return result;
+  return result.filter(candidate => candidate.name);
 }
 
 export async function getSingleCandidateInfo(id, token, validate, setIsLoggedIn) {
@@ -67,5 +67,18 @@ export async function getCandidateReportsAPI(token, validate, setIsLoggedIn) {
     result = await validate(result, setIsLoggedIn);
   }
   
-  return result; 
+  return result.slice(0, 24); 
+}
+
+
+export async function deleteReportAPI (token, id) {
+  const reportEndpoint = `http://localhost:3333/api/reports/${id}`;
+  const response = await fetch(reportEndpoint, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
+  const result = await response.json();
+  return result;
 }
