@@ -1,20 +1,4 @@
 .reports-list-wrapper {
     width: 80%;
-    margin: 0 auto;
-}
-
-.reports-list-table {
-    background-color: inherit;
-   
-}
-
-.list-title {
-    display: block;
-    font-size: small;
-}
-.reports-row {
-    margin-bottom: 20px;
-    background: whitesmoke;
-    
-    
-}
+  }
+  

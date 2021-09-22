@@ -27,7 +27,7 @@ function App() {
             <Candidates setIsLoggedIn={setIsLoggedIn}/>
           </Route>
           <Route exact path="/reports/:id">
-            <ReportsPage />
+            <ReportsPage setIsLoggedIn={setIsLoggedIn} />
           </Route>
           <Route exact path="/reports-list" component={ReportsAdministration} />
         </Switch>
