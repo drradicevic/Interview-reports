@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import "./SingleReport.css";
 
-const SingleReport = ({ report, key }) => {
+const SingleReport = ({ report}) => {
   return (
     <Fragment>
       <div className="report-item col-3 ps-3 border-end border-dark">
