@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import "./SingleReport.css";
 
-const SingleReport = ({ report}) => {
+const SingleReport = ({ report, modalHandler}) => {
   return (
     <Fragment>
       <div className="report-item col-3 ps-3 border-end border-dark">
@@ -28,7 +28,7 @@ const SingleReport = ({ report}) => {
         <h6 className="list-title fw-normal text-black-50">Status</h6>
       </div>
       <div className="report-item col-1 text-center">
-        <i className="far fa-eye py-4 pe-4 fs-3 click-icon"></i>
+        <i className="far fa-eye py-4 pe-4 fs-3 click-icon" onClick={() => modalHandler(report)}></i>
         <i className="fas fa-times fs-3 click-icon"></i>
       </div>
       </Fragment>
