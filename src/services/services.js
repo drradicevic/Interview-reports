@@ -20,7 +20,7 @@ export async function getTokenAPI(data) {
 }
 
 
-export async function getCandidatesAPI(token) {
+export async function getCandidatesAPI(token, validate, setIsLoggedIn) {
     const candidateEndpoint = "http://localhost:3333/api/candidates"
     const response = await fetch(candidateEndpoint, {
       method: "GET",
@@ -28,11 +28,15 @@ export async function getCandidatesAPI(token) {
           Authorization: `Bearer ${token}` 
         }
     });
-    const result = await response.json();
+    let result = await response.json();
+    if(result === "jwt expired") {
+      result = await validate(result, setIsLoggedIn);
+    }
+    
     return result;
 }
 
-export async function getSingleCandidateInfo(id, token) {
+export async function getSingleCandidateInfo(id, token, validate, setIsLoggedIn) {
     const singleCandidateEndpoint = `http://localhost:3333/api/candidates/${id}`
     const response = await fetch(singleCandidateEndpoint, {
       method: "GET", 
@@ -40,12 +44,16 @@ export async function getSingleCandidateInfo(id, token) {
           Authorization: `Bearer ${token}` 
         }
     });
-    const result = await response.json();
-    return result; 
+    let result = await response.json();
+    if(result === "jwt expired") {
+      result = await validate(result, setIsLoggedIn);
+    }
+    
+    return result;
 }
 
 
-export async function getCandidateReportsAPI(token) {
+export async function getCandidateReportsAPI(token, validate, setIsLoggedIn) {
     const reportsEndpoint = "http://localhost:3333/api/reports";
     const response = await fetch(reportsEndpoint, {
       method: "GET",
@@ -53,6 +61,11 @@ export async function getCandidateReportsAPI(token) {
           Authorization: `Bearer ${token}` 
         }
     });
-    const result = await response.json();
+    let result = await response.json();
+    console.log("result", result);
+    if(result === "jwt expired") {
+      result = await validate(result, setIsLoggedIn);
+    }
+    
     return result; 
 }
