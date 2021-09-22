@@ -19,24 +19,24 @@ const ReportsPage = ({setIsLoggedIn}) => {
   const [modalReport, setModalReport] = useState(null);
 
   const validate = useTokenValidator();
-  const singleCandidateId = useParams();
+  const {id}  = useParams();
   const token = localStorage.getItem("token");
+
+  console.log(id);
   
   useEffect(() => {
-    getSingleCandidateInfo(singleCandidateId.id, token)
+    getSingleCandidateInfo(id, token, validate, setIsLoggedIn)
     .then(info => {
-      validate(info, setIsLoggedIn)
       setCandidateInfo(info)
     });
-  }, [])
+  }, [setIsLoggedIn])
 
   useEffect(() => {
-    getCandidateReportsAPI(token)
+    getCandidateReportsAPI(token, validate, setIsLoggedIn)
       .then(reports => {
-        validate(reports, setIsLoggedIn)
-        setReports(reports.filter(el => el.candidateId === parseInt(singleCandidateId.id)))
+        setReports(reports.filter(el => el.candidateId === parseInt(id)))
       })
-  }, [])
+  }, [setIsLoggedIn])
 
   const modalHandler = (singleReport) => {
     setModalReport(singleReport);

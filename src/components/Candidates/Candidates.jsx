@@ -18,19 +18,18 @@ const Candidates = ({setIsLoggedIn}) => {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    getCandidatesAPI(token).then(
-      (candidates) => {
-        validate(candidates, setIsLoggedIn)
+    getCandidatesAPI(token, validate, setIsLoggedIn)
+    .then(candidates => {
         setCandidates(candidates);
         setfilteredCandidates(candidates);
       }
     );
-  }, []);
+  }, [setIsLoggedIn]);
 
   const onTypingHandler = (e) => {
     setInputValue(e.target.value);
     const filtered = candidates.filter((candidate) => 
-      candidate?.name?.toLowerCase().includes(e?.target?.value?.toLowerCase())
+      candidate?.name?.toLowerCase().includes(e?.target?.value?.toLowerCase().trim())
       );
     setfilteredCandidates(filtered);
   };
