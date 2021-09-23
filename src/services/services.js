@@ -1,6 +1,6 @@
 export async function getTokenAPI(data) {
     const tokenEndpoint = "http://localhost:3333/login";
-    try {
+
       const response = await fetch(tokenEndpoint, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {
@@ -12,10 +12,6 @@ export async function getTokenAPI(data) {
         throw new Error();
       }
       return response.json(); // parses JSON response into native JavaScript object
-    } catch(err) {
-
-      alert("Your email or password are incorrect!");
-    }
 
 }
 

@@ -36,7 +36,7 @@ const LoginForm = ({ onLogin }) => {
           localStorage.setItem("token", data.accessToken); // JSON data parsed by `data.json()` call
           onLogin(true);
         })
-        .catch((err) => alert("Please provide correct email or password"));
+        .catch((err) => alert(`${err}! Please provide correct email or password.`));
     } else {
       alert("All fields are required!");
     }
