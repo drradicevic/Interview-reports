@@ -15,10 +15,9 @@ const Candidates = ({setIsLoggedIn}) => {
   const [inputValue, setInputValue] = useState("");
 
   const validate = useTokenValidator();
-  const token = localStorage.getItem("token");
 
   useEffect(() => {
-    getCandidatesAPI(token, validate, setIsLoggedIn)
+    getCandidatesAPI(validate, setIsLoggedIn)
     .then(candidates => {
         setCandidates(candidates);
         setfilteredCandidates(candidates);

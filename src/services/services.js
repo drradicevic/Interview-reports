@@ -20,7 +20,8 @@ export async function getTokenAPI(data) {
 }
 
 
-export async function getCandidatesAPI(token, validate, setIsLoggedIn) {
+export async function getCandidatesAPI(validate, setIsLoggedIn) {
+  const token = localStorage.getItem("token");
   const candidateEndpoint = "http://localhost:3333/api/candidates"
   const response = await fetch(candidateEndpoint, {
     method: "GET",

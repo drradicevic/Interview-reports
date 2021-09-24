@@ -21,7 +21,9 @@ const ReportsAdministration = ({setIsLoggedIn}) => {
 
   useEffect(() => {
     getCandidateReportsAPI(token, validate, setIsLoggedIn)
-    .then((reports) => setReports(reports));
+    .then((reports) => {
+      console.log(reports)
+      setReports(reports)});
   }, [deleteReport, setIsLoggedIn]);
 
   const modalHandler = (singleReport) => {
