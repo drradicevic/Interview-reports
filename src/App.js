@@ -7,6 +7,7 @@ import LoginForm from "./components/LoginForm/LoginForm.jsx";
 import Main from "./components/Main/Main";
 import ReportsPage from "./components/ReportsPage/ReportsPage.jsx";
 import Candidates from "./components/Candidates/Candidates.jsx";
+import ReportsAdministration from "./components/ReportsAdministration/ReportsAdministration.jsx";
 
 import "./App.css";
 
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route exact path="/reports/:id">
             <ReportsPage setIsLoggedIn={setIsLoggedIn} />
+          </Route>
+          <Route exact path="/reports-list">
+          <ReportsAdministration setIsLoggedIn={setIsLoggedIn} />
           </Route>
         </Switch>
         <Footer />

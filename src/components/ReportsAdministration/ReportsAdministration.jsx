@@ -46,9 +46,9 @@ const ReportsAdministration = ({setIsLoggedIn}) => {
         ))}
         <Backdrop showModal={showModal} cancelModal={cancelHandler} />
         <Modal showModal={showModal} cancelModal={cancelHandler} modalReport={modalReport} />
-        <Link to="/wizard">
+        {/*<Link to="/wizard">
           <button className="wizard-button"><i className="fas fa-folder-plus fs-2"></i></button>
-        </Link>
+        </Link>*/}
       </div>
     )
   );
