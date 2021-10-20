@@ -4,8 +4,8 @@ import useTokenValidator from "../../hooks/useTokenValidator";
 
 import AboutCandidate from "./AboutCandidate/AboutCandidate";
 import Reports from "./Reports/Reports";
-import Modal from "./Modal/Modal";
-import Backdrop from "./Modal/Backdrop";
+import Modal from "../Modal/Modal";
+import Backdrop from "../Modal/Backdrop";
 import Spinner  from "../Spinner/Spinner";
 
 

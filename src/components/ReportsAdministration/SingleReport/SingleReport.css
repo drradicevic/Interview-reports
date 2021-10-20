@@ -1,0 +1,8 @@
+.reports-wrapper {
+    background-color: rgba(241, 234, 234, 0.493);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    word-wrap: break-word;
+}
+.click-icon {
+    cursor: pointer;
+}
